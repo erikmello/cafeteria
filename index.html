@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Café Mello</title>
+</head>
+
+<body>
+    <div class="caixa-video">
+        <video src="./videos/cafeteria.mp4" loop muted autoplay></video>
+        <div class="mascara"></div>
+    </div>
+
+    <header class="header">
+        <section>
+            <a href="#">
+                <img src="/img/logo.png" alt="logo">
+            </a>
+
+            <nav>
+                <a href="#">HOME</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#" onclick="mostrarModal()">Endereço</a>
+            </nav>
+
+        </section>
+    </header>
+
+    <section class="caixa-principal">
+        <div>
+            <h3>O melhor café da região</h3>
+            <p>Bem-vindo ao Café Mello.Mais do que uma cafeteria, somos um espaço acolhedor para
+                quem ama café e bons momentos. Cada xícara é feita com grãos selecionados e muito cuidado. Do
+                expresso clássico às nossas receitas especiais, aqui o sabor e o aconchego andam juntos.
+                Experimente o melhor café da região.
+            </p>
+            <a class="botao-link">Transforme seu dia com um café. Peça já!</a>
+        </div>
+    </section>
+
+    <section class="caixa-sobre" id="sobre">
+        <h2 class="titulo"> <span>Sobre</span> Nós</h2>
+        <div class="sobre-container">
+            <div class="sobre-imagem">
+                <img src="img/about-img.jpg">
+            </div>
+
+            <div class="sobre-texto">
+                <h3>O que faz nosso café especial?</h3>
+                <p>No Café Mello, cada detalhe é pensado para oferecer a melhor experiência. Desde a escolha dos grãos,
+                    provenientes das melhores regiões cafeeiras, até o cuidado no preparo, tudo é feito com paixão e
+                    dedicação. Nossos baristas são verdadeiros especialistas, garantindo que cada xícara tenha o sabor
+                    perfeito. Além disso, o ambiente acolhedor e a atmosfera única tornam o momento do café ainda mais
+                    especial.Seja para um rápido expresso ou uma experiência mais relaxante, nosso café é feito para
+                    você.</p>
+                <a class="botao-link">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal">
+        <h3 class="titulo"><span>Nosso</span> Endereço</h3>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7972.101881388883!2d-44.27554400590444!3d-2.490089421218432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f68dbe9f2dfc27%3A0x5f3d103aef0a9ba8!2zQ2FsaGF1LCBTw6NvIEx1w61zIC0gTUE!5e0!3m2!1spt-BR!2sbr!4v1744840918302!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="mascara-modal" onclick="esconderModal()"></div>
+
+    <footer class="footer">
+        <p>© 2025 Café Mello | Desenvolvido por Erik Mello</p>
+    </footer>
+
+
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>
