@@ -2,15 +2,8 @@ html {
     scroll-behavior: smooth;
 }
 
-@media (max-width: 768px) {
-    .caixa-video video {
-        object-fit: cover;
-    }
-}
-
-
 :root {
-    font-family: 10px;
+    font-family: "Roboto", sans-serif;
     --main-color: #d3ad7f;
     --black: #131313;
     --bg: #010103;
@@ -22,7 +15,6 @@ html {
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: "Roboto", sans-serif;
 }
 
 .caixa-video {
@@ -56,8 +48,6 @@ html {
     border-bottom: var(--border);
     width: 100vw;
     padding: 0 2rem;
-
-
 }
 
 section {
@@ -78,6 +68,7 @@ section {
 
 .header section a img {
     height: 4rem;
+    max-width: 100%;
 }
 
 .header section nav a {
@@ -130,7 +121,6 @@ section {
     transition: 0.3s linear;
 }
 
-
 .caixa-principal div a:hover {
     letter-spacing: 0.1rem;
 }
@@ -157,11 +147,11 @@ section {
 
 .caixa-sobre .sobre-container .sobre-imagem {
     flex: 1 1 45rem;
-
 }
 
 .caixa-sobre .sobre-container .sobre-imagem img {
     width: 100%;
+    height: auto;
 }
 
 .caixa-sobre .sobre-container .sobre-texto {
@@ -172,7 +162,6 @@ section {
 .caixa-sobre .sobre-container .sobre-texto h3 {
     font-size: 3rem;
     color: #fff;
-
 }
 
 .caixa-sobre .sobre-container .sobre-texto p {
@@ -186,15 +175,31 @@ section {
 .modal {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: transparent;
     gap: 20px;
     z-index: 4;
     position: fixed;
     top: 50%;
-    left: -30%;
-    transform: translate(-50%, -50%);
-    transition: left 0.8s linear;
+    left: 50%;
+    transform: translate(-300%, -50%);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 90%;
+    max-width: 800px;
+}
 
+.modal.active {
+    transform: translate(-50%, -50%);
+}
+
+.modal iframe {
+    width: 100%!important;
+    height: 60vh;
+    max-height: 600px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin: 0 auto;
 }
 
 .mascara-modal {
@@ -221,4 +226,159 @@ section {
 
 .footer p {
     margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header section {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 1rem 0;
+    }
+    
+    .header section a img {
+        height: 3rem;
+    }
+    
+    .header section nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .header section nav a {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    
+    .caixa-principal {
+        padding-top: 14rem !important;
+        min-height: calc(100vh - 140px);
+    }
+    
+    .caixa-principal div {
+        max-width: 90%;
+    }
+    
+    .caixa-principal div h3 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .caixa-principal div p {
+        font-size: 1.5rem;
+    }
+    
+    .botao-link {
+        font-size: 1.5rem;
+        padding: 0.5rem 2rem;
+    }
+    
+    .titulo {
+        font-size: 2.5rem;
+    }
+    
+    .caixa-sobre .sobre-container {
+        flex-direction: column;
+        gap: 0 !important;
+    }
+    
+    .caixa-sobre .sobre-container .sobre-imagem {
+        margin-bottom: 0.5rem;
+    }
+    
+    .caixa-sobre .sobre-container .sobre-texto {
+        padding: 0 1rem !important;
+        margin-top: -0.5rem;
+    }
+    
+    .caixa-sobre .sobre-container .sobre-texto h3 {
+        font-size: 1.8rem !important;
+        margin: 0.5rem 0;
+        line-height: 1.3;
+    }
+    
+    .caixa-sobre .sobre-container .sobre-texto p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin: 0.8rem 0;
+    }
+    
+    .modal {
+        width: 95%;
+    }
+    
+    .modal iframe {
+        height: 50vh;
+    }
+    
+    .footer {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header section {
+        padding: 0.5rem 0 !important;
+    }
+    
+    .header section nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .header section nav a {
+        font-size: 1.2rem;
+    }
+    
+    .caixa-principal {
+        padding-top: 16rem !important;
+    }
+    
+    .caixa-principal div h3 {
+        font-size: 2rem !important;
+    }
+    
+    .caixa-principal div p {
+        font-size: 1.2rem;
+    }
+    
+    .botao-link {
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+    }
+    
+    .modal {
+        width: 100%;
+        padding: 0 10px;
+        transform: translate(-400%, -50%);
+    }
+    
+    .modal.active {
+        transform: translate(-50%, -50%);
+    }
+    
+    .modal iframe {
+        height: 40vh;
+    }
+    
+    .titulo {
+        font-size: 2rem;
+    }
+    
+    .caixa-sobre .sobre-container .sobre-texto h3 {
+        font-size: 1.6rem !important;
+    }
+    
+    .caixa-sobre .sobre-container .sobre-texto p {
+        font-size: 1.1rem !important;
+    }
 }
